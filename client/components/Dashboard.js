@@ -1,11 +1,24 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
+import Nav from './common/Nav'
+import { connect } from 'react-redux'
 
 const Dashboard = props => {
-    if (!props.user) return <Redirect to='/login' />
+    if (!props.user.username) return <Redirect to='/login' />
     return (
-        <div> dahsboard </div>
+        <div>
+            <Nav />
+            <div> dahsboard </div>
+        </div>
     )
 }
 
-export default Dashboard
+const mapState = ({ user }) => ({
+    user
+})
+
+const mapDispatch = dispatch => ({
+
+})
+
+export default connect(mapState, mapDispatch)(Dashboard)

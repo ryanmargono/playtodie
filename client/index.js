@@ -1,16 +1,22 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './store/index'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
+import Settings from './components/Settings'
+
 
 ReactDOM.render(
   <BrowserRouter>
-    <Switch>
-      <Route exact path='/' component={Dashboard} />
-      <Route exact path='/login' component={Login} />
-      {/* <Route exact path= '/signup' component = {Signup} /> */}
-    </Switch>
+    <Provider store={store}>
+      <Switch>
+        <Route exact path='/' component={Dashboard} />
+        <Route exact path='/login' component={Login} />
+        <Route exact path='/settings' component={Settings} />
+      </Switch>
+    </Provider>
   </BrowserRouter>,
   document.getElementById('app')
 )

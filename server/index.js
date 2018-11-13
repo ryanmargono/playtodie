@@ -3,9 +3,10 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const app = express()
-const resturants = require('./routes/resturants');
-const users = require('./routes/users');
-const yelp = require('./routes/yelp');
+const resturant = require('./routes/resturant')
+const user = require('./routes/user')
+const yelp = require('./routes/yelp')
+require('./db')
 
 // logging middleware
 app.use(morgan('dev'))
@@ -19,8 +20,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // modularizing routes
 app.use('/api/yelp', yelp);
-app.use('/api/users', users);
-app.use('/api/resturants', resturants);
+app.use('/api/user', user);
+app.use('/api/resturant', resturant);
 
 // sends index.html
 app.use('*', (req, res) => {
