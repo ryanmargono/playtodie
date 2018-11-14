@@ -7,9 +7,16 @@ const ResturantSchema = new mongoose.Schema({
     address: { type: String, required: true },
 });
 
+const SettingsSchema = new mongoose.Schema({
+    zipcode: { type: String, required: true },
+    cuisineTypes: [String],
+    distanceCode: { type: Number }
+})
+
 const UserSchema = new mongoose.Schema({
     username: { type: String, required: true },
     password: { type: String, required: true },
+    settings: SettingsSchema,
     visited: [ResturantSchema]
 });
 
@@ -17,4 +24,4 @@ const db = mongoose.createConnection('mongodb://default:default123@ds231588.mlab
 const User = db.model('User', UserSchema)
 const Resturant = db.model('Resturant', ResturantSchema)
 
-module.exports = {User, Resturant}
+module.exports = { User, Resturant }

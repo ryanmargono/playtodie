@@ -36,7 +36,7 @@ class Login extends React.Component {
                 <Row>
                     <Col s={4} offset='s4'>
                         <Row>
-                            <Input onChange={this.onInputChange} name='username' label="username" s={12} placeholder="example@mail.com" />
+                            <Input onChange={this.onInputChange} name='username' label="username" s={12} placeholder="username" />
                             <Input onChange={this.onInputChange} name='password' type="password" label="password" s={12} />
                             <Button onClick={this.onSubmit}> Enter </Button>
                         </Row>
