@@ -16,7 +16,7 @@ const Prefs = props => {
         <div> 
             <p> Preferences: </p>
             <p> Zipcode: {props.user.settings.zipcode} </p>
-            <p> Cuisines: {props.user.settings.cuisineTypes.join(', ')} </p>
+            <p> Cuisines: {Array.from(props.user.settings.cuisineTypes).join(', ')} </p>
             <p> Max Distance: {getDistance(props.user.settings.distanceCode)} </p>
         </div>
     )
