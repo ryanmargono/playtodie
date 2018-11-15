@@ -29,4 +29,4 @@ app.use('*', (req, res) => {
 })
 
 // start server
-app.listen(8000, () => console.log(`Server listening on port 8000`))
+app.listen((process.env.PORT || 8000), () => console.log(`Server listening on port 8000`))
