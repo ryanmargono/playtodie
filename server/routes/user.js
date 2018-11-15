@@ -10,7 +10,7 @@ router.post('/', ({ body }, res, next) => {
     User.findOne({ username: body.username }, (err, user) => {
         if (user) {
             if (user.password == body.password) res.json(user)
-            else res.json({ error: 'email is taken and incorrect password was supplied.' })
+            else res.json({ error: 'username is taken and incorrect password was supplied.' })
         }
         else {
             User.create({ ...body, settings: null }, (err, user) => {
