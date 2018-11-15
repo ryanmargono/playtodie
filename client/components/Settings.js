@@ -2,8 +2,9 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import Nav from './common/Nav'
 import { connect } from 'react-redux'
-import { Row, Button, Col, Input } from 'react-materialize'
+import { Row, Button, Col, Input, CardPanel } from 'react-materialize'
 import { updateSettingsReq } from '../store/user'
+import styles from './common/styles'
 
 class Settings extends React.Component {
     constructor(props) {
@@ -19,7 +20,8 @@ class Settings extends React.Component {
                 mexican: false,
                 american: false,
             },
-            load: false
+            load: false,
+            redirect: false,
         }
     }
 
@@ -67,27 +69,37 @@ class Settings extends React.Component {
         const settings = this.state.settings
         settings.cuisineTypes = Array.from(settings.cuisineTypes)
         this.props.updateSettingsReq(this.props.user._id, settings)
+            .then(()=>{
+                if (!this.props.user.settings.error) {
+                    window.Materialize.toast('Settings have been successfully saved!', 3000)
+                }
+                else {
+                    window.Materialize.toast('Error!', 3000)
+                }
+                this.setState({redirect: true})
+            })
+        
     }
 
     render() {
-        console.log(this.state)
+        if (this.state.redirect) return <Redirect to='/' />
         if (!this.props.user.username) return <Redirect to='/login' />
         if (this.state.load) return (
-            <div>
+            <div className='center'>
                 <Nav />
                 <Row>
-                    <Col s={4} offset='s4'>
+                    <Col s={4} offset='s4' style={styles.settings}>
                         <Row>
-                            <p> Zip Code: </p>
+                            <p> <b> Zip Code: </b></p>
                             <Input onChange={this.onInputChange} s={12} placeholder="10003" value={this.state.zipcode} defaultValue={this.state.settings.zipcode}/>
-                            <p> Cuisine Type: </p>
+                            <p> <b> Cuisine Type: </b> </p>
                             <br />
                             <Row>
                                 <Input onChange={this.onCheckboxChange} type='checkbox' value='chinese' label='Chinese' checked={this.state.checked.chinese} />
                                 <Input onChange={this.onCheckboxChange} type='checkbox' value='american' label='American' checked={this.state.checked.american} />
                                 <Input onChange={this.onCheckboxChange} type='checkbox' value='mexican' label='Mexican' checked={this.state.checked.mexican} />
                             </Row>
-                            <p> Maximum Distance: </p>
+                            <p> <b> Maximum Distance: </b> </p>
                             <Input type='select' s={12} onChange={this.onSelectChange} defaultValue={this.state.settings.distanceCode.toString()}>
                                 <option value="0"> {"< 1 mile"} </option>
                                 <option value="1"> {"1 - 3 miles"}</option>

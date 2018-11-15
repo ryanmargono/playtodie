@@ -2,13 +2,29 @@ import React from 'react'
 import { Redirect } from 'react-router-dom'
 import Nav from './common/Nav'
 import { connect } from 'react-redux'
+import { Col, Row } from 'react-materialize'
+import styles from './common/styles'
+import Prefs from './Prefs'
 
 const Dashboard = props => {
     if (!props.user.username) return <Redirect to='/login' />
     return (
         <div>
             <Nav />
-            <div> dahsboard </div>
+            <Row>
+                <Col offset='s1' s={5} style={styles.login}>
+                    <Row>
+                    </Row>
+                </Col>
+                <Col offset='s1's={4} style={styles.login}>
+                    <Row>
+                        <Prefs />
+                    </Row>
+                    {/* <Row>
+                        <History />
+                    </Row> */}
+                </Col>
+            </Row>
         </div>
     )
 }
