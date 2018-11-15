@@ -24,7 +24,7 @@ app.use('/api/user', user);
 app.use('/api/resturant', resturant);
 
 // sends index.html
-app.use('*', (req, res) => {
+app.use('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public/index.html'))
 })
 
