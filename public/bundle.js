@@ -5228,6 +5228,10 @@ var _Prefs = __webpack_require__(88);
 
 var _Prefs2 = _interopRequireDefault(_Prefs);
 
+var _History = __webpack_require__(198);
+
+var _History2 = _interopRequireDefault(_History);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Dashboard = function Dashboard(props) {
@@ -5251,6 +5255,11 @@ var Dashboard = function Dashboard(props) {
                     _reactMaterialize.Row,
                     null,
                     _react2.default.createElement(_Prefs2.default, null)
+                ),
+                _react2.default.createElement(
+                    _reactMaterialize.Row,
+                    null,
+                    _react2.default.createElement(_History2.default, null)
                 )
             )
         )
@@ -6567,36 +6576,39 @@ var Prefs = function Prefs(props) {
                 return "3+ miles";
         }
     };
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'p',
+    if (props.user.settings) {
+        return _react2.default.createElement(
+            'div',
             null,
-            ' Preferences: '
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            ' Zipcode: ',
-            props.user.settings.zipcode,
-            ' '
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            ' Cuisines: ',
-            Array.from(props.user.settings.cuisineTypes).join(', '),
-            ' '
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            ' Max Distance: ',
-            getDistance(props.user.settings.distanceCode),
-            ' '
-        )
-    );
+            _react2.default.createElement(
+                'h3',
+                null,
+                ' Preferences: '
+            ),
+            _react2.default.createElement(
+                'p',
+                null,
+                ' Zipcode: ',
+                props.user.settings.zipcode,
+                ' '
+            ),
+            _react2.default.createElement(
+                'p',
+                null,
+                ' Cuisines: ',
+                Array.from(props.user.settings.cuisineTypes).join(', '),
+                ' '
+            ),
+            _react2.default.createElement(
+                'p',
+                null,
+                ' Max Distance: ',
+                getDistance(props.user.settings.distanceCode),
+                ' '
+            )
+        );
+    }
+    return null;
 };
 
 var mapState = function mapState(_ref) {
@@ -39168,6 +39180,49 @@ module.exports = function(originalModule) {
 	return module;
 };
 
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var History = function History(props) {
+    if (props.user.visited.length) {
+        return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+                'h3',
+                null,
+                ' History: '
+            )
+        );
+    }
+    return null;
+};
+
+var mapState = function mapState(_ref) {
+    var user = _ref.user;
+    return {
+        user: user
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapState, null)(History);
 
 /***/ })
 /******/ ]);

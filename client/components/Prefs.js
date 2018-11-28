@@ -12,14 +12,17 @@ const Prefs = props => {
                 return "3+ miles"
         }
     }
-    return (
-        <div> 
-            <p> Preferences: </p>
-            <p> Zipcode: {props.user.settings.zipcode} </p>
-            <p> Cuisines: {Array.from(props.user.settings.cuisineTypes).join(', ')} </p>
-            <p> Max Distance: {getDistance(props.user.settings.distanceCode)} </p>
-        </div>
-    )
+    if (props.user.settings){
+        return (
+            <div> 
+                <h3> Preferences: </h3>
+                <p> Zipcode: {props.user.settings.zipcode} </p>
+                <p> Cuisines: {Array.from(props.user.settings.cuisineTypes).join(', ')} </p>
+                <p> Max Distance: {getDistance(props.user.settings.distanceCode)} </p>
+            </div>
+        )
+    }
+    return null
 }
 
 const mapState = ({user}) => ({

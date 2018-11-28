@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { Col, Row } from 'react-materialize'
 import styles from './common/styles'
 import Prefs from './Prefs'
+import History from './History'
 
 const Dashboard = props => {
     if (!props.user.username) return <Redirect to='/login' />
@@ -20,9 +21,9 @@ const Dashboard = props => {
                     <Row>
                         <Prefs />
                     </Row>
-                    {/* <Row>
+                    <Row>
                         <History />
-                    </Row> */}
+                    </Row>
                 </Col>
             </Row>
         </div>
