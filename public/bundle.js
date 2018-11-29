@@ -1384,7 +1384,7 @@ var updateUser = function updateUser(user) {
 
 var saveRest = exports.saveRest = function saveRest(data, id) {
     return function (dispatch) {
-        return Promise.all([_axios2.default.post('/api/restaurant', data), _axios2.default.put('/api/user/' + id, { rest: data.name })]).then(function (res) {
+        return Promise.all([_axios2.default.post('/api/restaurant', data, { headers: { auth: id } }), _axios2.default.put('/api/user/' + id, { rest: data.name }, { headers: { auth: id } })]).then(function (res) {
             return dispatch(addRest(data.name));
         });
     };
@@ -1402,7 +1402,7 @@ var userAuthReq = exports.userAuthReq = function userAuthReq(user) {
 
 var updateSettingsReq = exports.updateSettingsReq = function updateSettingsReq(id, settings) {
     return function (dispatch) {
-        return _axios2.default.put('/api/user/' + id, settings).then(function (_ref2) {
+        return _axios2.default.put('/api/user/' + id, settings, { headers: { auth: id } }).then(function (_ref2) {
             var data = _ref2.data;
 
             if (data.error) dispatch(updateUser({ error: data.error }));else dispatch(updateUser(data));

@@ -26,8 +26,8 @@ const updateUser = user => ({
 
 export const saveRest = (data, id) => dispatch =>
     Promise.all([
-        Axios.post('/api/restaurant', data),
-        Axios.put(`/api/user/${id}`, {rest: data.name})
+        Axios.post('/api/restaurant', data, {headers: {auth: id}}),
+        Axios.put(`/api/user/${id}`, {rest: data.name}, {headers: {auth: id}})
     ])
         .then(res => dispatch(addRest(data.name)))
 
@@ -40,7 +40,7 @@ export const userAuthReq = user => dispatch =>
         })
 
 export const updateSettingsReq = (id, settings) => dispatch =>
-    Axios.put(`/api/user/${id}`, settings)
+    Axios.put(`/api/user/${id}`, settings, {headers: {auth: id}})
         .then(({ data }) => {
             if (data.error) dispatch(updateUser({ error: data.error }))
             else dispatch(updateUser(data))
