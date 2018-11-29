@@ -24,14 +24,23 @@ router.post('/', ({ body }, res, next) => {
 // endpoint for updating user data (editing resturant history and changing preferences)
 router.put('/:id', (req, res, next) => {
     const id = req.params.id
-    User.findOne({ _id: id }, (err, user) => {
-        user.settings = req.body
-        user.save(err => {
-            if (err) res.json({ error: err })
-            else res.json(user)
+    if (req.body.rest) {
+        User.findOne({ _id: id }, (err, user) => {
+            user.visited = [req.body.rest, ...user.visited]
+            user.save(err => {
+                res.json(user)
+            })
         })
-    })
-
+    }
+    else {
+        User.findOne({ _id: id }, (err, user) => {
+            user.settings = req.body
+            user.save(err => {
+                if (err) res.json({ error: err })
+                else res.json(user)
+            })
+        })
+    }
 });
 
 module.exports = router;

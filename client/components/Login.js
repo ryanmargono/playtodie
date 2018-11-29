@@ -14,7 +14,8 @@ class Login extends React.Component {
                 username: '',
                 password: '',
             },
-            showError: false
+            showError: false,
+            disabled: true
         }
     }
 
@@ -29,14 +30,35 @@ class Login extends React.Component {
         const { name, value } = target
         const updatedState = this.state.user
         updatedState[name] = value
-        this.setState({ showError: false, user: updatedState })
+        this.setState({ showError: false, user: updatedState }, 
+            ()=>{
+                if (this.state.user.username && this.state.user.password) this.setState({disabled: false})
+                else {
+                    const toast = document.querySelector('#toast-container>.toast');
+                    if (toast) toast.remove();
+                    window.Materialize.toast('please enter a username and password!', 3000)
+                    this.setState({disabled: true})
+                }
+            })
     }
 
     render() {
-        if (this.props.user.error && this.state.showError) {
+        if ((!this.state.user.username.length || !this.state.user.password.length) && this.state.showError) {
+            const toast = document.querySelector('#toast-container>.toast');
+            if (toast) toast.remove();
+            window.Materialize.toast('please enter a username and password!', 3000)
+        }
+        else if (this.props.user.error && this.state.showError) {
+            const toast = document.querySelector('#toast-container>.toast');
+            if (toast) toast.remove();
             window.Materialize.toast(this.props.user.error, 3000)
         }
-        if (this.props.user.username) return <Redirect to='/' />
+        if (this.props.user.username) {
+            const toast = document.querySelector('#toast-container>.toast');
+            if (toast) toast.remove();
+            window.Materialize.toast('log in success!', 3000)
+            return <Redirect to='/' />
+        }
         return (
             <div>
                 <Nav />
@@ -45,7 +67,7 @@ class Login extends React.Component {
                             <Row>
                                 <Input onChange={this.onInputChange} name='username' label="username" s={12} placeholder="username" />
                                 <Input onChange={this.onInputChange} name='password' type="password" label="password" s={12} />
-                                <Button onClick={this.onSubmit}> Enter </Button>
+                                <Button disabled={this.state.disabled} onClick={this.onSubmit}> Enter </Button>
                             </Row>
                         </Col>
                     </Row>

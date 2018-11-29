@@ -9,6 +9,7 @@ const Nav = props => {
         return (
             <Navbar brand='Random Eats' right>
                 <li><NavLink to='/'> Dashboard </NavLink> </li>
+                <li><NavLink to='/feed'> Feed </NavLink> </li>
                 <li><NavLink to='/settings'> Settings </NavLink> </li>
                 <NavItem onClick={props.userLogout}> Logout </NavItem>
             </Navbar>

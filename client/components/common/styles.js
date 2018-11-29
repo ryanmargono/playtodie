@@ -17,5 +17,15 @@ export default {
         maxWidth: '10%',
         marginLeft: 50,
         marginLeft: 50,
+    },
+    fixedContent: {
+        maxHeight: 300,
+        overflowY:'scroll',
+        overflowX:'hidden',
+    },
+    fixedContent2: {
+        maxHeight: 450,
+        overflowY:'scroll',
+        overflowX:'hidden',
     }
 }

@@ -31,6 +31,7 @@
     "mongodb": "^3.1.9",
     "mongoose": "^5.3.11",
     "morgan": "^1.8.1",
+    "node-yelp-api-v3": "^1.0.4",
     "passport": "^0.3.2",
     "passport-google-oauth": "^1.0.0",
     "pg": "^6.1.2",
@@ -45,7 +46,8 @@
     "redux-logger": "^2.8.1",
     "redux-thunk": "^2.2.0",
     "sequelize": "^4.3.1",
-    "socket.io": "^2.0.3"
+    "socket.io": "^2.0.3",
+    "yelp-fusion": "^2.2.1"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.9.0",

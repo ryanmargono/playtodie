@@ -6,6 +6,7 @@ import store from './store/index'
 import Dashboard from './components/Dashboard'
 import Login from './components/Login'
 import Settings from './components/Settings'
+import Feed from './components/Feed'
 
 
 ReactDOM.render(
@@ -14,6 +15,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/' component={Dashboard} />
         <Route exact path='/login' component={Login} />
+        <Route exact path='/feed' component={Feed} />
         <Route exact path='/settings' component={Settings} />
       </Switch>
     </Provider>

@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 // modularizing routes
 app.use('/api/yelp', yelp);
 app.use('/api/user', user);
-app.use('/api/resturant', resturant);
+app.use('/api/restaurant', resturant);
 
 // sends index.html
 app.use('/', (req, res) => {
