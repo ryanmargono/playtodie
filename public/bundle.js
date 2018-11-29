@@ -5482,6 +5482,13 @@ var Feed = function (_React$Component) {
             });
         };
 
+        _this.onClick = function () {
+            _this.props.retrieveRests().then(function () {
+                console.log(_this.props.restaurant.feed);
+                _this.setState({ restaurants: _this.props.restaurant.feed, allRests: _this.props.restaurant.feed, filter: '' });
+            });
+        };
+
         _this.state = {
             filter: '',
             restaurants: [],
@@ -5522,7 +5529,7 @@ var Feed = function (_React$Component) {
                             { s: 4, offset: 's4', style: _styles2.default.settings },
                             _react2.default.createElement(
                                 _reactMaterialize.Button,
-                                { style: { marginTop: '5%' } },
+                                { style: { marginTop: '5%' }, onClick: this.onClick },
                                 ' refresh feed '
                             ),
                             _react2.default.createElement(

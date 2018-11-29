@@ -18,17 +18,24 @@ class Feed extends React.Component {
 
     componentDidMount() {
         if (!this.state.restaurants.length) {
-            this.props.retrieveRests().then(()=>{
+            this.props.retrieveRests().then(() => {
                 console.log(this.props.restaurant.feed)
-                this.setState({restaurants: this.props.restaurant.feed, allRests: this.props.restaurant.feed})
-            }) 
+                this.setState({ restaurants: this.props.restaurant.feed, allRests: this.props.restaurant.feed })
+            })
         }
     }
 
     onChange = e => {
-        this.setState({filter: e.target.value}, ()=>{
+        this.setState({ filter: e.target.value }, () => {
             const filtered = this.state.allRests.filter(rest => rest.name.toLowerCase().includes(this.state.filter.toLowerCase()))
-            this.setState({restaurants: filtered})
+            this.setState({ restaurants: filtered })
+        })
+    }
+
+    onClick = () => {
+        this.props.retrieveRests().then(() => {
+            console.log(this.props.restaurant.feed)
+            this.setState({ restaurants: this.props.restaurant.feed, allRests: this.props.restaurant.feed, filter: '' })
         })
     }
 
@@ -41,20 +48,20 @@ class Feed extends React.Component {
                 <div className='center'>
                     <Row>
                         <Col s={4} offset='s4' style={styles.settings}>
-                            <Button style={{ marginTop: '5%' }}> refresh feed </Button>
+                            <Button style={{ marginTop: '5%' }} onClick={this.onClick}> refresh feed </Button>
                             <Row>
                                 <Input type='text' onChange={this.onChange} s={12} placeholder="Filter by Restaurant Name" value={this.state.filter} defaultValue={this.state.filter} />
                             </Row>
                             <Row>
                                 <div style={styles.fixedContent2}>
-                                <Collection>
-                                    {
-                                        this.state.restaurants &&
-                                        this.state.restaurants.reverse().map(rest => (
-                                            <CollectionItem> {`${rest.username} 🍴 ${rest.name}`} </CollectionItem>
-                                        ))
-                                    }
-                                </Collection>
+                                    <Collection>
+                                        {
+                                            this.state.restaurants &&
+                                            this.state.restaurants.reverse().map(rest => (
+                                                <CollectionItem> {`${rest.username} 🍴 ${rest.name}`} </CollectionItem>
+                                            ))
+                                        }
+                                    </Collection>
                                 </div>
                             </Row>
                         </Col>
