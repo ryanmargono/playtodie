@@ -10,7 +10,12 @@ import Randomizer from './Randomizer';
 
 const Dashboard = props => {
     if (!props.user.username) return <Redirect to='/login' />
-    if (!props.user.settings) return <Redirect to='/settings' />
+    if (!props.user.settings) {
+        const toast = document.querySelector('#toast-container>.toast');
+        if (toast) toast.remove();
+        window.Materialize.toast('please update your settings first!', 3000)
+        return <Redirect to='/settings' />
+    }
     return (
         <div>
             <Nav />
@@ -20,7 +25,7 @@ const Dashboard = props => {
                         <Randomizer />
                     </Row>
                 </Col>
-                <Col offset='s1's={4} style={styles.login}>
+                <Col offset='s1' s={4} style={styles.login}>
                     <Row>
                         <Prefs />
                     </Row>

@@ -38,7 +38,12 @@ class Feed extends React.Component {
     }
 
     render() {
-        if (!this.props.user.settings) return <Redirect to='/settings' />
+        if (!this.props.user.settings) {
+            const toast = document.querySelector('#toast-container>.toast');
+            if (toast) toast.remove();
+            window.Materialize.toast('please update your settings first!', 3000)
+            return <Redirect to='/settings' />
+        }
         if (!this.props.user.username) return <Redirect to='/login' />
         return (
             <div>

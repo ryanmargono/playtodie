@@ -58,19 +58,16 @@ Example Resturant:
 3. as a registered user, I can customize my settings (location, cuisine preference, etc.).
 4. as a registered user, I can view my previously selected resturants.
 5. as a registered user, I can generate a random resturant and either select it or keep generating random ones.
-6. as a registered user, I can edit my previously selected resturants (for such a case where I accidentally selected one).
 
 ## Research Topics
 
-(4 points) External APIs: Yelp API and Google Address Autocomplete API
+(3 points) External APIs: Yelp API 
 
 (6 points) Client-Side JS Library: ReactJS
 
-(5 points) User Authentication: express-basic-auth
-
 (4 points) Client-Side Form Validation: React-Materialize
 
-Total: 15 points
+Total: 13 points
 
 ### Initial Main Project File
 

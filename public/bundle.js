@@ -5376,7 +5376,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var Dashboard = function Dashboard(props) {
     if (!props.user.username) return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
-    if (!props.user.settings) return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/settings' });
+    if (!props.user.settings) {
+        var toast = document.querySelector('#toast-container>.toast');
+        if (toast) toast.remove();
+        window.Materialize.toast('please update your settings first!', 3000);
+        return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/settings' });
+    }
     return _react2.default.createElement(
         'div',
         null,
@@ -5510,7 +5515,12 @@ var Feed = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            if (!this.props.user.settings) return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/settings' });
+            if (!this.props.user.settings) {
+                var toast = document.querySelector('#toast-container>.toast');
+                if (toast) toast.remove();
+                window.Materialize.toast('please update your settings first!', 3000);
+                return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/settings' });
+            }
             if (!this.props.user.username) return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
             return _react2.default.createElement(
                 'div',
