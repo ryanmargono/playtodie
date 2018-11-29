@@ -19,6 +19,10 @@ class Login extends React.Component {
         }
     }
 
+    componentDidMount(){
+        window.Materialize.toast('please log in, if you dont have an account one will be made for you!', 6000)
+    }
+
     onSubmit = event => {
         event.preventDefault();
         this.setState({showError: false}, 

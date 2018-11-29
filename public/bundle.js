@@ -5484,7 +5484,6 @@ var Feed = function (_React$Component) {
 
         _this.onClick = function () {
             _this.props.retrieveRests().then(function () {
-                console.log(_this.props.restaurant.feed);
                 _this.setState({ restaurants: _this.props.restaurant.feed, allRests: _this.props.restaurant.feed, filter: '' });
             });
         };
@@ -5504,7 +5503,6 @@ var Feed = function (_React$Component) {
 
             if (!this.state.restaurants.length) {
                 this.props.retrieveRests().then(function () {
-                    console.log(_this2.props.restaurant.feed);
                     _this2.setState({ restaurants: _this2.props.restaurant.feed, allRests: _this2.props.restaurant.feed });
                 });
             }
@@ -5672,6 +5670,11 @@ var Login = function (_React$Component) {
     }
 
     _createClass(Login, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            window.Materialize.toast('please log in, if you dont have an account one will be made for you!', 6000);
+        }
+    }, {
         key: 'render',
         value: function render() {
             if ((!this.state.user.username.length || !this.state.user.password.length) && this.state.showError) {

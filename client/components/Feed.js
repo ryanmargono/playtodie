@@ -19,7 +19,6 @@ class Feed extends React.Component {
     componentDidMount() {
         if (!this.state.restaurants.length) {
             this.props.retrieveRests().then(() => {
-                console.log(this.props.restaurant.feed)
                 this.setState({ restaurants: this.props.restaurant.feed, allRests: this.props.restaurant.feed })
             })
         }
@@ -34,7 +33,6 @@ class Feed extends React.Component {
 
     onClick = () => {
         this.props.retrieveRests().then(() => {
-            console.log(this.props.restaurant.feed)
             this.setState({ restaurants: this.props.restaurant.feed, allRests: this.props.restaurant.feed, filter: '' })
         })
     }
