@@ -3,10 +3,6 @@ const express = require('express')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const app = express()
-const resturant = require('./routes/resturant')
-const user = require('./routes/user')
-const yelp = require('./routes/yelp')
-require('./db')
 
 // logging middleware
 app.use(morgan('dev'))
@@ -17,11 +13,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, '..', 'public')))
-
-// modularizing routes
-app.use('/api/yelp', yelp);
-app.use('/api/user', user);
-app.use('/api/restaurant', resturant);
 
 // sends index.html
 app.use('/', (req, res) => {
