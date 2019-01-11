@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'react-materialize'
+import { Link } from 'react-router-dom'
 
 const Home = () => (
     <div className="desktopContainer">
@@ -17,10 +18,18 @@ const Home = () => (
         </Row>
         <Row style={{ paddingTop: '150px' }}>
             <div className="homeButtons">
-                <button> shop </button>
-                <button> thoughts </button>
-                <button> about </button>
-                <button> connect </button>
+                <Link to='/shop'>
+                    <button> shop </button>
+                </Link>
+                <Link to='/thoughts'>
+                    <button> thoughts </button>
+                </Link>
+                <Link to='/about'>
+                    <button> about </button>
+                </Link>
+                <Link to='/connect'>
+                    <button> connect </button>
+                </Link>
             </div>
         </Row>
         <Row style={{ paddingTop: '150px' }}>
@@ -31,8 +40,6 @@ const Home = () => (
                 <p> subscribe </p>
             </div>
         </Row>
-
-
     </div>
 )
 
