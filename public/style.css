@@ -55,7 +55,8 @@ div {
     background-size: auto 100vh;
     overflow-y: scroll;
     display: 'flex';
-    flex-flow: 'column'
+    flex-flow: 'column';
+    -webkit-overflow-scrolling: touch;
 }
 
 .dropdownContainer {

@@ -7303,7 +7303,7 @@ var Home = function Home() {
         ),
         _react2.default.createElement(
             _reactMaterialize.Row,
-            { style: { paddingTop: '7%' } },
+            { style: { paddingTop: '12%' } },
             _react2.default.createElement(
                 'div',
                 { className: 'homeButtons', style: { paddingLeft: '13%', paddingRight: '13%' } },
@@ -7339,7 +7339,7 @@ var Home = function Home() {
         ),
         _react2.default.createElement(
             _reactMaterialize.Row,
-            { style: { paddingTop: '5%' } },
+            { style: { paddingTop: '7%' } },
             _react2.default.createElement(
                 'div',
                 null,
