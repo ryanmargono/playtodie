@@ -50,17 +50,9 @@ class Nav extends React.Component {
                                     return (
                                         <div key={page} className="mobileNav">
                                             <hr />
-                                            {page === 'shop' && (
-                                                <a href='https://www.playtodie.com/products' target='_blank'>
-                                                    <button> {page} </button>
-                                                </a>
-                                            )
-                                            }
-                                            {page !== 'shop' && (
                                                 <Link to={`/${page}`}>
                                                     <button> {page} </button>
                                                 </Link>
-                                            )}
                                             {page == 'connect' && <hr />}
                                         </div>
                                     )
@@ -73,7 +65,7 @@ class Nav extends React.Component {
         )
         return (
             <Row className="desktopHeader" style={{ paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed', fontSize: '30px' }}>
-                <Col s={2} style={{ marginLeft: 0 }}> <a href='https://www.playtodie.com/products' target='_blank'> shop </a> </Col>
+                <Col s={2} style={{ marginLeft: 0 }}> <Link to='/shop'> shop </Link></Col>
                 <Col s={2}> <Link to='/thoughts'> thoughts </Link> </Col>
                 <Col s={2}> <Link to='/'> <img className='image' src='/logo.png' style={{ transform: 'scale(0.7)' }}></img> </Link> </Col>
                 <Col s={2}> <Link to='/about'> about </Link> </Col>

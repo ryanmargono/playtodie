@@ -1886,18 +1886,7 @@ var Nav = function (_React$Component) {
                                 'div',
                                 { key: page, className: 'mobileNav' },
                                 _react2.default.createElement('hr', null),
-                                page === 'shop' && _react2.default.createElement(
-                                    'a',
-                                    { href: 'https://www.playtodie.com/products', target: '_blank' },
-                                    _react2.default.createElement(
-                                        'button',
-                                        null,
-                                        ' ',
-                                        page,
-                                        ' '
-                                    )
-                                ),
-                                page !== 'shop' && _react2.default.createElement(
+                                _react2.default.createElement(
                                     _reactRouterDom.Link,
                                     { to: '/' + page },
                                     _react2.default.createElement(
@@ -1922,11 +1911,10 @@ var Nav = function (_React$Component) {
                     { s: 2, style: { marginLeft: 0 } },
                     ' ',
                     _react2.default.createElement(
-                        'a',
-                        { href: 'https://www.playtodie.com/products', target: '_blank' },
+                        _reactRouterDom.Link,
+                        { to: '/shop' },
                         ' shop '
-                    ),
-                    ' '
+                    )
                 ),
                 _react2.default.createElement(
                     _reactMaterialize.Col,
@@ -7087,40 +7075,50 @@ var Connect = function Connect() {
         { id: 'top', className: 'mobileContainer' },
         _react2.default.createElement(_Nav2.default, null),
         /Mobi/.test(navigator.userAgent) && _react2.default.createElement(
-            _reactMaterialize.Col,
-            { style: { fontSize: '25px', paddingTop: '35%' } },
+            'div',
+            { style: { display: 'flex', alignItems: 'center', paddingLeft: '5%', paddingRight: '5%', fontSize: '25px' } },
             _react2.default.createElement(
-                'a',
-                { href: 'mailto: playtodie2000@gmail.com' },
-                ' ',
+                'div',
+                null,
                 _react2.default.createElement(
-                    'p',
-                    null,
-                    ' for all email inquiries '
+                    _reactMaterialize.Col,
+                    { style: { minWidth: '100%' } },
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'mailto: playtodie2000@gmail.com' },
+                        ' ',
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            ' for all email inquiries '
+                        ),
+                        ' '
+                    )
                 ),
-                ' '
-            ),
-            _react2.default.createElement(
-                'a',
-                { href: 'https://www.instagram.com/playtodie_/', target: '_bank' },
-                ' ',
                 _react2.default.createElement(
-                    'p',
-                    null,
-                    'instagram'
+                    _reactMaterialize.Col,
+                    { style: { minWidth: '100%' } },
+                    _react2.default.createElement(
+                        'a',
+                        { href: 'https://www.instagram.com/playtodie_/', target: '_bank' },
+                        ' ',
+                        _react2.default.createElement(
+                            'p',
+                            null,
+                            'instagram'
+                        ),
+                        '  '
+                    )
                 ),
-                '  '
-            ),
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/subscribe' },
-                '  ',
                 _react2.default.createElement(
-                    'p',
-                    null,
-                    ' subscribe to our mailing list '
-                ),
-                ' '
+                    _reactMaterialize.Col,
+                    { style: { minWidth: '100%' } },
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { to: '/subscribe' },
+                        '  subscribe to our mailing list '
+                    )
+                )
             )
         ),
         !/Mobi/.test(navigator.userAgent) && _react2.default.createElement(
@@ -7311,18 +7309,7 @@ var Home = function Home() {
                     return _react2.default.createElement(
                         _reactMaterialize.Col,
                         { m: 3, key: page, style: { height: '100px' } },
-                        page === 'shop' && _react2.default.createElement(
-                            'a',
-                            { href: 'https://www.playtodie.com/', target: '_blank' },
-                            _react2.default.createElement(
-                                'button',
-                                null,
-                                ' ',
-                                page,
-                                ' '
-                            )
-                        ),
-                        page !== 'shop' && _react2.default.createElement(
+                        _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/' + page },
                             _react2.default.createElement(
@@ -7388,6 +7375,8 @@ var _Nav = __webpack_require__(29);
 
 var _Nav2 = _interopRequireDefault(_Nav);
 
+var _reactMaterialize = __webpack_require__(21);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7425,20 +7414,32 @@ var Subscribe = function (_React$Component) {
                 _react2.default.createElement(_Nav2.default, null),
                 /Mobi/.test(navigator.userAgent) && _react2.default.createElement(
                     'div',
-                    { style: { paddingTop: '35%' } },
+                    { style: { paddingTop: '5%', display: 'flex', alignItems: 'center', paddingLeft: '5%', paddingRight: '5%', fontSize: '25px' } },
                     _react2.default.createElement(
                         'div',
-                        { style: { height: '30px', fontSize: '20px' } },
-                        'email: ',
-                        _react2.default.createElement('input', { onChange: this.onChange, style: { width: '50%' } })
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { style: { paddingTop: '4%' } },
+                        null,
                         _react2.default.createElement(
-                            'button',
-                            { onClick: this.submit, className: 'noStyleButton', style: { fontSize: '15px' } },
-                            ' subscribe '
+                            _reactMaterialize.Col,
+                            { style: { minWidth: '100%' } },
+                            _react2.default.createElement(
+                                'div',
+                                { style: { height: '30px', fontSize: '20px' } },
+                                'email: ',
+                                _react2.default.createElement('input', { onChange: this.onChange, style: { width: '50%' } })
+                            )
+                        ),
+                        _react2.default.createElement(
+                            _reactMaterialize.Col,
+                            { style: { minWidth: '100%' } },
+                            _react2.default.createElement(
+                                'div',
+                                { style: { paddingTop: '4%' } },
+                                _react2.default.createElement(
+                                    'button',
+                                    { onClick: this.submit, className: 'noStyleButton', style: { fontSize: '15px' } },
+                                    ' subscribe '
+                                )
+                            )
                         )
                     )
                 ),
@@ -7606,6 +7607,8 @@ var _reactInfiniteScroller2 = _interopRequireDefault(_reactInfiniteScroller);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -7632,10 +7635,9 @@ var Thoughts = function (_React$Component) {
                 snapshot.forEach(function (doc) {
                     return data.push(doc.data());
                 });
-                console.log(data);
-                _this.setState({ thoughts: [_this.state.thoughts].concat(data), lastLoad: snapshot.docs[snapshot.docs.length - 1] }, function () {
-                    if (_this.state.thoughts.length === prevLength) _this.setState({ loadMore: false });
-                });
+                var thoughts = [].concat(_toConsumableArray(_this.state.thoughts), data);
+                var lastLoad = snapshot.docs[snapshot.docs.length - 1];
+                if (prevLength === thoughts.length) _this.setState({ loadMore: false });else _this.setState({ thoughts: thoughts, lastLoad: lastLoad });
             });
         };
 
@@ -7682,7 +7684,7 @@ var Thoughts = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactMaterialize.Col,
-                        { style: { fontSize: '25px', paddingTop: '30%', paddingLeft: '5%', paddingRight: '5%' } },
+                        { style: { fontSize: '25px', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' } },
                         this.state.thoughts.map(function (thought) {
                             if (thought.type === 'image') {
                                 return _react2.default.createElement(
@@ -7723,7 +7725,7 @@ var Thoughts = function (_React$Component) {
                     { className: 'desktopContainer' },
                     _react2.default.createElement(
                         _reactMaterialize.Col,
-                        { style: { fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%' } },
+                        { style: { fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%', paddingBottom: '5%' } },
                         this.state.thoughts.map(function (thought) {
                             if (thought.type === 'image') {
                                 return _react2.default.createElement(
@@ -52265,6 +52267,10 @@ var _Thoughts = __webpack_require__(91);
 
 var _Thoughts2 = _interopRequireDefault(_Thoughts);
 
+var _Shop = __webpack_require__(223);
+
+var _Shop2 = _interopRequireDefault(_Shop);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 console.warn = function () {};
@@ -52276,7 +52282,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _reactRouterDom.Switch,
     null,
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/shop', component: _Connect2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/shop', component: _Shop2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/thoughts', component: _Thoughts2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/about', component: _About2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/connect', component: _Connect2.default }),
@@ -83877,6 +83883,169 @@ function valueEqual(a, b) {
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (valueEqual);
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Nav = __webpack_require__(29);
+
+var _Nav2 = _interopRequireDefault(_Nav);
+
+var _reactMaterialize = __webpack_require__(21);
+
+var _firebase = __webpack_require__(141);
+
+var _firebase2 = _interopRequireDefault(_firebase);
+
+var _reactInfiniteScroller = __webpack_require__(155);
+
+var _reactInfiniteScroller2 = _interopRequireDefault(_reactInfiniteScroller);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Thoughts = function (_React$Component) {
+    _inherits(Thoughts, _React$Component);
+
+    function Thoughts(props) {
+        _classCallCheck(this, Thoughts);
+
+        var _this = _possibleConstructorReturn(this, (Thoughts.__proto__ || Object.getPrototypeOf(Thoughts)).call(this, props));
+
+        _this.handleScroll = function (e) {
+            var bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
+            if (bottom && _this.state.loadMore) _this.loadMore();
+        };
+
+        _this.loadMore = function () {
+            console.log('loading');
+            var prevLength = _this.state.products.length;
+            _this.productsRef.orderBy('date_created', 'desc').startAfter(_this.state.lastLoad).limit(5).get().then(function (snapshot) {
+                var data = [];
+                snapshot.forEach(function (doc) {
+                    return data.push(doc.data());
+                });
+                var products = [].concat(_toConsumableArray(_this.state.products), data);
+                var lastLoad = snapshot.docs[snapshot.docs.length - 1];
+                if (prevLength === products.length) _this.setState({ loadMore: false });else _this.setState({ products: products, lastLoad: lastLoad });
+            });
+        };
+
+        _this.state = {
+            products: [],
+            lastLoad: {},
+            initialLoad: true,
+            loadMore: true
+        };
+        var db = _firebase2.default.firestore();
+        var settings = { timestampsInSnapshots: true };
+        db.settings(settings);
+        _this.productsRef = db.collection('products');
+        return _this;
+    }
+
+    _createClass(Thoughts, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            if (this.state.initialLoad) {
+                this.productsRef.orderBy('date_created', 'desc').limit(5).get().then(function (snapshot) {
+                    var data = [];
+                    snapshot.forEach(function (doc) {
+                        return data.push(doc.data());
+                    });
+                    _this2.setState({ products: data, lastLoad: snapshot.docs[snapshot.docs.length - 1], initialLoad: false }, function () {
+                        return console.log(_this2.state);
+                    });
+                });
+            }
+            this.productsRef.add({
+                date_created: new Date().toString(),
+                image: "https://firebasestorage.googleapis.com/v0/b/playtodie-86708.appspot.com/o/63%25%2Bproduct%2Bphoto1.png?alt=media&token=321ddf96-b752-4b3c-93f4-d79d9c3f7392",
+                link: "https://www.playtodie.com/product/63"
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { id: 'top', onScroll: this.handleScroll, className: 'mobileContainer' },
+                _react2.default.createElement(_Nav2.default, null),
+                /Mobi/.test(navigator.userAgent) && _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement(
+                        _reactMaterialize.Col,
+                        { style: { fontSize: '25px', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' } },
+                        this.state.products.map(function (product) {
+                            return _react2.default.createElement(
+                                'div',
+                                { key: product.value, style: { marginBottom: '5%' } },
+                                ' ',
+                                _react2.default.createElement(
+                                    'a',
+                                    { target: '_blank', href: product.link },
+                                    ' ',
+                                    _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: product.image }),
+                                    ' '
+                                )
+                            );
+                        })
+                    )
+                ),
+                !/Mobi/.test(navigator.userAgent) && _react2.default.createElement(
+                    'div',
+                    { className: 'desktopContainer' },
+                    _react2.default.createElement(
+                        _reactMaterialize.Col,
+                        { style: { fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%', paddingBottom: '5%' } },
+                        this.state.products.map(function (product) {
+                            return _react2.default.createElement(
+                                'div',
+                                { key: product.value, style: { marginBottom: '5%' } },
+                                ' ',
+                                _react2.default.createElement(
+                                    'a',
+                                    { target: '_blank', href: product.link },
+                                    ' ',
+                                    _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: product.image }),
+                                    ' '
+                                )
+                            );
+                        })
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Thoughts;
+}(_react2.default.Component);
+
+exports.default = Thoughts;
 
 /***/ })
 /******/ ]);

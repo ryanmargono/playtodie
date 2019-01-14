@@ -48,10 +48,10 @@ class Thoughts extends React.Component {
             .then(snapshot => {
                 let data = []
                 snapshot.forEach(doc => data.push(doc.data()))
-                console.log(data)
-                this.setState({ thoughts: [this.state.thoughts, ...data], lastLoad: snapshot.docs[snapshot.docs.length - 1] }, () => {
-                    if (this.state.thoughts.length === prevLength) this.setState({ loadMore: false })
-                })
+                const thoughts = [...this.state.thoughts, ...data]
+                const lastLoad = snapshot.docs[snapshot.docs.length - 1]
+                if (prevLength === thoughts.length) this.setState({loadMore: false})
+                else this.setState({ thoughts, lastLoad })
             })
     }
 
@@ -62,7 +62,7 @@ class Thoughts extends React.Component {
                 {
                     /Mobi/.test(navigator.userAgent) && (
                         <div>
-                            <Col style={{ fontSize: '25px', paddingTop: '30%', paddingLeft: '5%', paddingRight: '5%' }}>
+                            <Col style={{ fontSize: '25px', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {
@@ -83,7 +83,7 @@ class Thoughts extends React.Component {
                 {
                     !/Mobi/.test(navigator.userAgent) && (
                         <div className="desktopContainer">
-                            <Col style={{ fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%' }}>
+                            <Col style={{ fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%', paddingBottom:'5%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {

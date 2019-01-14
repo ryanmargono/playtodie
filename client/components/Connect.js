@@ -8,11 +8,21 @@ const Connect = () => (
         <Nav />
         {
             /Mobi/.test(navigator.userAgent) && (
-                <Col style={{ fontSize: '25px', paddingTop: '35%' }}>
-                    <a href='mailto: playtodie2000@gmail.com'> <p> for all email inquiries </p> </a>
-                    <a href="https://www.instagram.com/playtodie_/" target='_bank'> <p>instagram</p>  </a>
-                    <Link to='/subscribe'>  <p> subscribe to our mailing list </p> </Link>
-                </Col>
+                <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '5%', paddingRight: '5%', fontSize: '25px' }}>
+                    <div>
+
+                        <Col style={{ minWidth: '100%' }}>
+                            <a href='mailto: playtodie2000@gmail.com'> <p> for all email inquiries </p> </a>
+                        </Col>
+                        <Col style={{ minWidth: '100%' }}>
+                            <a href="https://www.instagram.com/playtodie_/" target='_bank'> <p>instagram</p>  </a>
+                        </Col>
+                        <Col style={{ minWidth: '100%' }}>
+                            <Link to='/subscribe'>  subscribe to our mailing list </Link>
+
+                        </Col>
+                    </div>
+                </div>
             )
         }
         {

@@ -53,17 +53,9 @@ const Home = () => {
                 <div className="homeButtons" style={{ paddingLeft: '13%', paddingRight: '13%' }}>
                     {['shop', 'thoughts', 'about', 'connect'].map(page => (
                         <Col m={3} key={page} style={{ height: '100px' }}>
-                            {page === 'shop' && (
-                                <a href='https://www.playtodie.com/' target='_blank'>
-                                    <button> {page} </button>
-                                </a>
-                            )
-                            }
-                            {page !== 'shop' && (
                                 <Link to={`/${page}`}>
                                     <button> {page} </button>
                                 </Link>
-                            )}
                         </Col>
                     ))}
                 </div>
