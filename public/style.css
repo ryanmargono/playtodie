@@ -1,7 +1,26 @@
+html, body {
+    height: 100%
+}
+
+*{
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.text {
+    font-size: 35px
+}
+
 div {
     text-align: center;
     width: 100%;
     vertical-align: middle;
+}
+
+#terms {
+    text-align: center;
+    width: 25%;
+    vertical-align: middle;
+    margin-right: 0
 }
 
 .desktopContainer {
@@ -10,23 +29,34 @@ div {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: scroll;
+}
+
+.noStyleButton {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
 }
 
 .homeButtons button {
     background-color: Transparent;
     border-color: black;
     border-width: 3px;
-    border-radius: 40px;
-    width: 250px;
-    height: 90px;
-    margin: 20px;
+    border-radius: 45px;
+    width: 100%;
+    height: 100%;
     font-size: 30px;
-    font-family: arial;
+    font-family: Arial !important;
 }
 
 a {
     color: black;
-    text-decoration: : none
+    text-decoration: none;
+    font-family: Arial !important;
+    font-weight: normal !important;
 }
 
 #igIcon {
@@ -39,3 +69,28 @@ img {
     object-fit: scale-down;
     height: 150px;
 }
+
+input {
+    border: 2px solid !important;
+    border-color: black !important;
+    height: 100% !important;
+    width: 15%;
+}
+
+.mobileNav {
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 8vh !important;
+}
+
+.mobileNav hr {
+    border-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.mobileNav button {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+};
