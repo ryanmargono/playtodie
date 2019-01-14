@@ -19,7 +19,7 @@ class Subscribe extends React.Component {
 
     render() {
         return (
-            <div id="top" className="desktopContainer">
+            <div id="top" className="mobileContainer">
                 <Nav />
                 {
                     /Mobi/.test(navigator.userAgent) && (
@@ -35,6 +35,8 @@ class Subscribe extends React.Component {
                 }
                 {
                     !/Mobi/.test(navigator.userAgent) && (
+                        <div className='desktopContainer'>
+
                         <div style={{ marginTop: '20%', }}>
                             <div style={{ height: '40px', fontSize: '20px' }}>
                                 email: <input onChange={this.onChange} style={{ width: '15%' }} />
@@ -42,6 +44,7 @@ class Subscribe extends React.Component {
                             <div style={{ paddingTop: '2%' }}>
                                 <button onClick = {this.submit} className='noStyleButton' style={{ fontSize: '20px' }}> subscribe </button>
                             </div>
+                        </div>
                         </div>
                     )
                 }

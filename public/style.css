@@ -23,13 +23,46 @@ div {
     margin-right: 0
 }
 
+.desktopHeader {
+    background-image: url('./desktopBackground.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+.mobileHeader {
+    background-image: url('./desktopBackground.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    position: fixed;
+}
+
 .desktopContainer {
     background-image: url('./desktopBackground.png');
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100vw 100vh;
     overflow-y: scroll;
+}
+
+.mobileContainer {
+    background-image: url('./desktopBackground.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    overflow-y: scroll;
+    display: 'flex';
+    flex-flow: 'column'
+}
+
+.dropdownContainer {
+    background-image: url('./desktopBackground.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
 }
 
 .noStyleButton {
@@ -70,6 +103,12 @@ img {
     height: 150px;
 }
 
+.mobileImg {
+    max-width:100%;
+    object-fit: scale-down;
+    height: 100px !important;
+}
+
 input {
     border: 2px solid !important;
     border-color: black !important;
@@ -93,4 +132,6 @@ input {
     width: 100% !important;
     height: 100% !important;
     padding: 0 !important;
+    border: none;
+    background: none;
 };

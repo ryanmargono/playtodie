@@ -3,7 +3,7 @@ import Nav from './Nav'
 import { Col, Row } from 'react-materialize';
 
 const Terms = () => (
-    <div id="top" className="desktopContainer">
+    <div id="top" className="mobileContainer">
         <Nav />
         {
             /Mobi/.test(navigator.userAgent) && (
@@ -26,23 +26,25 @@ const Terms = () => (
         }
         {
             !/Mobi/.test(navigator.userAgent) && (
-                <Row style={{marginTop: '17%', marginBottom: '5%'}}>
-                    <Col m={8} offset='m2' style={{ fontSize: '35px' }}>
-                        by using our website, you agree to our terms of use. terms are subject to change without notice.
+                <div className='desktopContainer'>
+                    <Row style={{ marginTop: '17%', marginBottom: '5%' }}>
+                        <Col m={8} offset='m2' style={{ fontSize: '35px' }}>
+                            by using our website, you agree to our terms of use. terms are subject to change without notice.
                 <br /> <br />
-                        return policy
+                            return policy
                 <br /> <br />
-                        all sales are final, return are not accepted. in case of damage or missing products, we offer full refunds or exchanges of items for equal value. we reserve the right to refuse return requests at any time.
+                            all sales are final, return are not accepted. in case of damage or missing products, we offer full refunds or exchanges of items for equal value. we reserve the right to refuse return requests at any time.
                 <br /> <br />
-                        payment
+                            payment
                 <br /> <br />
-                        prices are listed in USD. we accept Visa, MasterCard, Discover, and American Express credit card payments. we also accept payments via Paypal.
+                            prices are listed in USD. we accept Visa, MasterCard, Discover, and American Express credit card payments. we also accept payments via Paypal.
                 <br /> <br />
-                        shipping
+                            shipping
                 <br /> <br />
-                        playtodie ships all orders via USPS. domestic (US) orders are shipped via first class ground shipping. international orders are shipped via USPS priority mail.
+                            playtodie ships all orders via USPS. domestic (US) orders are shipped via first class ground shipping. international orders are shipped via USPS priority mail.
                     </Col>
-                </Row>
+                    </Row>
+                </div>
             )
         }
     </div>

@@ -11,7 +11,7 @@ class Thoughts extends React.Component {
             thoughts: [],
             lastLoad: {},
             initialLoad: true,
-            loadMore:true,
+            loadMore: true,
         }
         const db = firebase.firestore()
         const settings = { timestampsInSnapshots: true };
@@ -49,7 +49,7 @@ class Thoughts extends React.Component {
                 let data = []
                 snapshot.forEach(doc => data.push(doc.data()))
                 console.log(data)
-                this.setState({ thoughts: [this.state.thoughts, ... data], lastLoad: snapshot.docs[snapshot.docs.length - 1] }, () => {
+                this.setState({ thoughts: [this.state.thoughts, ...data], lastLoad: snapshot.docs[snapshot.docs.length - 1] }, () => {
                     if (this.state.thoughts.length === prevLength) this.setState({ loadMore: false })
                 })
             })
@@ -57,11 +57,12 @@ class Thoughts extends React.Component {
 
     render() {
         return (
-            <div id="top" className="desktopContainer" onScroll={this.handleScroll}>
+            <div id="top" onScroll={this.handleScroll} className='mobileContainer'>
                 <Nav />
-                    {
-                        /Mobi/.test(navigator.userAgent) && (
-                            <Col style={{ fontSize: '25px', paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%' }}>
+                {
+                    /Mobi/.test(navigator.userAgent) && (
+                        <div>
+                            <Col style={{ fontSize: '25px', paddingTop: '30%', paddingLeft: '5%', paddingRight: '5%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {
@@ -76,10 +77,12 @@ class Thoughts extends React.Component {
                                     })
                                 }
                             </Col>
-                        )
-                    }
-                    {
-                        !/Mobi/.test(navigator.userAgent) && (
+                        </div>
+                    )
+                }
+                {
+                    !/Mobi/.test(navigator.userAgent) && (
+                        <div className="desktopContainer">
                             <Col style={{ fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
@@ -95,8 +98,9 @@ class Thoughts extends React.Component {
                                     })
                                 }
                             </Col>
-                        )
-                    }
+                        </div>
+                    )
+                }
             </div>
         )
     }
