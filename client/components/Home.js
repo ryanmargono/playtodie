@@ -10,7 +10,7 @@ const Home = () => {
                     <div> playtodie </div>
                 </Col>
                 <Col s={4}>
-                    <img src='/logo.png'></img>
+                    <img className='image' src='/logo.png'></img>
                 </Col>
             </Row>
             <Row style={{ paddingTop: '5%' }}>
@@ -51,7 +51,7 @@ const Home = () => {
                     </div>
                 </Col>
                 <Col s={4}>
-                    <img src='/logo.png'></img>
+                    <img  className='image' className='image' src='/logo.png'></img>
                 </Col>
                 <Col s={4}>
                 </Col>

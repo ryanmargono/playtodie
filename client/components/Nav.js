@@ -30,7 +30,7 @@ class Nav extends React.Component {
                             <i className="material-icons" onClick={this.back}> arrow_back </i>
                         </Col>
                         <Col s={4}>
-                            <Link to='/'><img src='/logo.png' style={{ height: 'auto', transform: 'scale(0.6)' }}></img></Link>
+                            <Link to='/'><img className='image' src='/logo.png' style={{ height: 'auto', transform: 'scale(0.6)' }}></img></Link>
                         </Col>
                         <Col s={4}>
                             <i className="material-icons" onClick={this.toggleDrawer}> menu </i>
@@ -67,7 +67,7 @@ class Nav extends React.Component {
             <Row style={{ paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed', fontSize: '30px' }}>
                 <Col s={2} style={{ marginLeft: 0 }}> <a href='https://www.playtodie.com/products' target='_blank'> shop </a> </Col>
                 <Col s={2}> <Link to='/thoughts'> thoughts </Link> </Col>
-                <Col s={2}> <Link to='/'> <img src='/logo.png' style={{ transform: 'scale(0.7)' }}></img> </Link> </Col>
+                <Col s={2}> <Link to='/'> <img className='image' src='/logo.png' style={{ transform: 'scale(0.7)' }}></img> </Link> </Col>
                 <Col s={2}> <Link to='/about'> about </Link> </Col>
                 <Col s={2}> <Link to='/connect'> connect </Link> </Col>
             </Row>
