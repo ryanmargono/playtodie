@@ -83,7 +83,7 @@ class Thoughts extends React.Component {
                 {
                     !/Mobi/.test(navigator.userAgent) && (
                         <div className="desktopContainer">
-                            <Col style={{ fontSize: '25px', paddingTop: '17%', paddingLeft: '30%', paddingRight: '30%', paddingBottom:'5%' }}>
+                            <Col style={{ fontSize: '25px', paddingTop: '20%', paddingLeft: '30%', paddingRight: '30%', paddingBottom:'5%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {

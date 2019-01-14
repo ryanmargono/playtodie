@@ -87,11 +87,21 @@ div {
     font-family: Arial !important;
 }
 
+.homeButtons button:hover {
+    background-color: navy !important;
+    color: white !important;
+    border-color: navy;
+}
+
 a {
     color: black;
     text-decoration: none;
     font-family: Arial !important;
     font-weight: normal !important;
+}
+
+a:hover {
+    color: navy;
 }
 
 #igIcon {

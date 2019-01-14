@@ -53,8 +53,8 @@ const Home = () => {
                 <div className="homeButtons" style={{ paddingLeft: '13%', paddingRight: '13%' }}>
                     {['shop', 'thoughts', 'about', 'connect'].map(page => (
                         <Col m={3} key={page} style={{ height: '100px' }}>
-                                <Link to={`/${page}`}>
-                                    <button> {page} </button>
+                                <Link  to={`/${page}`}>
+                                    <button id="button"> {page} </button>
                                 </Link>
                         </Col>
                     ))}
