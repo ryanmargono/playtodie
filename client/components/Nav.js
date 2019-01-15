@@ -32,7 +32,7 @@ class Nav extends React.Component {
                     <div className='mobileHeader'>
                         <Row style={{ height: 'auto', overflow: 'auto', display: 'flex', alignItems: 'center', paddingTop: '5%', }}>
                             <Col s={4}>
-                                <i className="material-icons" onClick={this.back}> arrow_back </i>
+                                <img style={{height:'20px'}} src='/arrows.png' onClick={this.back} />
                             </Col>
                             <Col s={4}>
                                 <Link to='/'><img className='image' src='/logo.png' style={{ height: 'auto', transform: 'scale(0.6)' }}></img></Link>

@@ -93,6 +93,12 @@ div {
     border-color: navy;
 }
 
+.homeButtons button:active {
+    background-color: navy !important;
+    color: white !important;
+    border-color: navy;
+}
+
 a {
     color: black;
     text-decoration: none;
@@ -102,6 +108,11 @@ a {
 
 a:hover {
     color: navy;
+}
+
+a:active{
+    color: navy;
+
 }
 
 #igIcon {

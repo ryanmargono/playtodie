@@ -1607,11 +1607,7 @@ var Nav = function (_React$Component) {
                             _react2.default.createElement(
                                 _reactMaterialize.Col,
                                 { s: 4 },
-                                _react2.default.createElement(
-                                    'i',
-                                    { className: 'material-icons', onClick: this.back },
-                                    ' arrow_back '
-                                )
+                                _react2.default.createElement('img', { style: { height: '20px' }, src: '/arrows.png', onClick: this.back })
                             ),
                             _react2.default.createElement(
                                 _reactMaterialize.Col,
