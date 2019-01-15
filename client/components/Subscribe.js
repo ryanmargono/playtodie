@@ -46,7 +46,7 @@ class Subscribe extends React.Component {
 
                             <div style={{ marginTop: '20%', }}>
                                 <div style={{ height: '40px', fontSize: '20px' }}>
-                                    email: <input onChange={this.onChange} style={{ width: '15%' }} />
+                                    email: <input onChange={this.onChange} style={{ width: '15%', paddingLeft: '1%' }} />
                                 </div>
                                 <div style={{ paddingTop: '2%' }}>
                                     <button onClick={this.submit} className='noStyleButton' style={{ fontSize: '20px' }}> subscribe </button>

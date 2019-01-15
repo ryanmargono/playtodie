@@ -83,14 +83,12 @@ div {
     border-radius: 45px;
     width: 100%;
     height: 100%;
-    font-size: 30px;
+    font-size: 34px;
     font-family: Arial !important;
 }
 
 .homeButtons button:hover {
-    background-color: navy !important;
-    color: white !important;
-    border-color: navy;
+    opacity: 0.5;
 }
 
 .homeButtons button:active {
@@ -104,14 +102,31 @@ a {
     text-decoration: none;
     font-family: Arial !important;
     font-weight: normal !important;
+    font-size: 20px
+}
+
+#link {
+    font-size:35px !important
+}
+
+#smaller {
+    font-size: 30px !important
+}
+
+#noHover:hover {
+    opacity: 1 !important
+}
+
+#navSizes {
+    font-size: 24px !important;
 }
 
 a:hover {
-    color: navy;
+    opacity: 0.5;
 }
 
 a:active{
-    color: navy;
+    color: royalblue;
 
 }
 
@@ -129,7 +144,7 @@ img {
 .mobileImg {
     max-width:100%;
     object-fit: scale-down;
-    height: 100px !important;
+    height: 130px !important;
 }
 
 input {
@@ -137,6 +152,8 @@ input {
     border-color: black !important;
     height: 100% !important;
     width: 15%;
+    box-sizing: border-box;
+    padding-left: 5px
 }
 
 .mobileNav {

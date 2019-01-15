@@ -51,7 +51,7 @@ class Nav extends React.Component {
                                         <div key={page} className="mobileNav">
                                             <hr />
                                                 <Link to={`/${page}`}>
-                                                    <button> {page} </button>
+                                                    <button id="navSizes"> {page} </button>
                                                 </Link>
                                             {page == 'connect' && <hr />}
                                         </div>
@@ -64,12 +64,12 @@ class Nav extends React.Component {
             </div>
         )
         return (
-            <Row className="desktopHeader" style={{ paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed', fontSize: '30px' }}>
-                <Col s={2} style={{ marginLeft: 0 }}> <Link to='/shop'> shop </Link></Col>
-                <Col s={2}> <Link to='/thoughts'> thoughts </Link> </Col>
-                <Col s={2}> <Link to='/'> <img className='image' src='/logo.png' style={{ transform: 'scale(0.7)' }}></img> </Link> </Col>
-                <Col s={2}> <Link to='/about'> about </Link> </Col>
-                <Col s={2}> <Link to='/connect'> connect </Link> </Col>
+            <Row className="desktopHeader" style={{ paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed',}}>
+                <Col s={2} style={{ marginLeft: 0, }}> <Link id="link"to='/shop'> shop </Link></Col>
+                <Col s={2}> <Link id="link" to='/thoughts'> thoughts </Link> </Col>
+                <Col s={2}> <Link id="link"to='/'id='noHover'> <img id='noHover'className='image' src='/logo.png' style={{ transform: 'scale(0.7)' }}></img> </Link> </Col>
+                <Col s={2}> <Link id="link"to='/about'> about </Link> </Col>
+                <Col s={2}> <Link id="link"to='/connect'> connect </Link> </Col>
             </Row>
         )
     }

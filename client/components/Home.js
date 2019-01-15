@@ -14,11 +14,11 @@ const Home = () => {
                 </Col>
             </Row>
             <Row style={{ paddingTop: '5%' }}>
-                <div className="homeButtons" style={{ paddingLeft: '25%', paddingRight: '25%' }}>
+                <div className="homeButtons" style={{ paddingLeft: '26%', paddingRight: '26%' }}>
                     {['shop', 'thoughts', 'about', 'connect'].map(page => (
-                        <div style={{ height: '75px', marginBottom: '15%' }} key={page}>
+                        <div style={{ height: '70px', marginBottom: '15%' }} key={page}>
                             <Link to={`/${page}`}>
-                                <button> {page} </button>
+                                <button id="smaller"> {page} </button>
                             </Link>
                         </div>
                     ))}
@@ -44,7 +44,7 @@ const Home = () => {
                     </div>
                 </Col>
                 <Col s={4}>
-                    <Link to='/'><img className='image' className='image' src='/logo.png'></img></Link>
+                    <Link id="noHover" to='/'><img id='noHover' className='image' src='/logo.png'></img></Link>
                 </Col>
                 <Col s={4}>
                 </Col>

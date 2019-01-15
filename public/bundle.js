@@ -1551,6 +1551,8 @@ var _reactRouterDom = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -1642,7 +1644,7 @@ var Nav = function (_React$Component) {
                                     { to: '/' + page },
                                     _react2.default.createElement(
                                         'button',
-                                        null,
+                                        { id: 'navSizes' },
                                         ' ',
                                         page,
                                         ' '
@@ -1656,14 +1658,14 @@ var Nav = function (_React$Component) {
             );
             return _react2.default.createElement(
                 _reactMaterialize.Row,
-                { className: 'desktopHeader', style: { paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed', fontSize: '30px' } },
+                { className: 'desktopHeader', style: { paddingTop: '5%', paddingLeft: '5%', paddingRight: '5%', display: 'flex', alignItems: 'center', position: 'fixed' } },
                 _react2.default.createElement(
                     _reactMaterialize.Col,
                     { s: 2, style: { marginLeft: 0 } },
                     ' ',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/shop' },
+                        { id: 'link', to: '/shop' },
                         ' shop '
                     )
                 ),
@@ -1673,7 +1675,7 @@ var Nav = function (_React$Component) {
                     ' ',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/thoughts' },
+                        { id: 'link', to: '/thoughts' },
                         ' thoughts '
                     ),
                     ' '
@@ -1684,9 +1686,9 @@ var Nav = function (_React$Component) {
                     ' ',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/' },
+                        _defineProperty({ id: 'link', to: '/' }, 'id', 'noHover'),
                         ' ',
-                        _react2.default.createElement('img', { className: 'image', src: '/logo.png', style: { transform: 'scale(0.7)' } }),
+                        _react2.default.createElement('img', { id: 'noHover', className: 'image', src: '/logo.png', style: { transform: 'scale(0.7)' } }),
                         ' '
                     ),
                     ' '
@@ -1697,7 +1699,7 @@ var Nav = function (_React$Component) {
                     ' ',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/about' },
+                        { id: 'link', to: '/about' },
                         ' about '
                     ),
                     ' '
@@ -1708,7 +1710,7 @@ var Nav = function (_React$Component) {
                     ' ',
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: '/connect' },
+                        { id: 'link', to: '/connect' },
                         ' connect '
                     ),
                     ' '
@@ -7220,11 +7222,7 @@ var _reactRouterDom = __webpack_require__(24);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var Home = function Home() {
-    var _React$createElement;
-
     if (/Mobi/.test(navigator.userAgent)) return _react2.default.createElement(
         'div',
         { id: 'top', className: 'mobileContainer' },
@@ -7255,17 +7253,17 @@ var Home = function Home() {
             { style: { paddingTop: '5%' } },
             _react2.default.createElement(
                 'div',
-                { className: 'homeButtons', style: { paddingLeft: '25%', paddingRight: '25%' } },
+                { className: 'homeButtons', style: { paddingLeft: '26%', paddingRight: '26%' } },
                 ['shop', 'thoughts', 'about', 'connect'].map(function (page) {
                     return _react2.default.createElement(
                         'div',
-                        { style: { height: '75px', marginBottom: '15%' }, key: page },
+                        { style: { height: '70px', marginBottom: '15%' }, key: page },
                         _react2.default.createElement(
                             _reactRouterDom.Link,
                             { to: '/' + page },
                             _react2.default.createElement(
                                 'button',
-                                null,
+                                { id: 'smaller' },
                                 ' ',
                                 page,
                                 ' '
@@ -7325,8 +7323,8 @@ var Home = function Home() {
                 { s: 4 },
                 _react2.default.createElement(
                     _reactRouterDom.Link,
-                    { to: '/' },
-                    _react2.default.createElement('img', (_React$createElement = { className: 'image' }, _defineProperty(_React$createElement, 'className', 'image'), _defineProperty(_React$createElement, 'src', '/logo.png'), _React$createElement))
+                    { id: 'noHover', to: '/' },
+                    _react2.default.createElement('img', { id: 'noHover', className: 'image', src: '/logo.png' })
                 )
             ),
             _react2.default.createElement(_reactMaterialize.Col, { s: 4 })
@@ -7648,7 +7646,7 @@ var Subscribe = function (_React$Component) {
                             'div',
                             { style: { height: '40px', fontSize: '20px' } },
                             'email: ',
-                            _react2.default.createElement('input', { onChange: this.onChange, style: { width: '15%' } })
+                            _react2.default.createElement('input', { onChange: this.onChange, style: { width: '15%', paddingLeft: '1%' } })
                         ),
                         _react2.default.createElement(
                             'div',
