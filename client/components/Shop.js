@@ -70,7 +70,7 @@ class Thoughts extends React.Component {
                             <Col style={{ fontSize: '25px', paddingLeft: '5%', paddingRight: '5%', paddingBottom: '5%' }}>
                                 {
                                     this.state.products.map(product => {
-                                            return (<div key={product.value} style={{ marginBottom: '5%' }}> <a target="_blank" href={product.link}> <img style={{ height: 'auto', width: 'auto' }} src={product.image} /> </a></div>)
+                                            return (<div key={product.value} style={{ marginBottom: '5%' }}> <a id='noHover' target="_blank" href={product.link}> <img style={{ height: 'auto', width: 'auto' }} src={product.image} /> </a></div>)
                                     })
                                 }
                             </Col>
@@ -83,7 +83,7 @@ class Thoughts extends React.Component {
                             <Col style={{ fontSize: '25px', paddingTop: '20%', paddingLeft: '30%', paddingRight: '30%', paddingBottom:'5%' }}>
                                 {
                                     this.state.products.map(product => {
-                                        return (<div key={product.value} style={{ marginBottom: '5%' }}> <a target="_blank" href={product.link}> <img style={{ height: 'auto', width: 'auto' }} src={product.image} /> </a></div>)
+                                        return (<div key={product.value} style={{ marginBottom: '5%' }}> <a id='noHover' target="_blank" href={product.link}> <img style={{ height: 'auto', width: 'auto' }} src={product.image} /> </a></div>)
                                     })
                                 }
                             </Col>

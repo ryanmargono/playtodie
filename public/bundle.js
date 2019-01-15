@@ -7507,7 +7507,7 @@ var Thoughts = function (_React$Component) {
                                 ' ',
                                 _react2.default.createElement(
                                     'a',
-                                    { target: '_blank', href: product.link },
+                                    { id: 'noHover', target: '_blank', href: product.link },
                                     ' ',
                                     _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: product.image }),
                                     ' '
@@ -7529,7 +7529,7 @@ var Thoughts = function (_React$Component) {
                                 ' ',
                                 _react2.default.createElement(
                                     'a',
-                                    { target: '_blank', href: product.link },
+                                    { id: 'noHover', target: '_blank', href: product.link },
                                     ' ',
                                     _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: product.image }),
                                     ' '
