@@ -2,7 +2,8 @@ import React from 'react'
 import Nav from './Nav'
 import { Col } from 'react-materialize'
 import firebase from '../firebase'
-import InfiniteScroll from 'react-infinite-scroller'
+import { Markup } from 'interweave'
+import ReactPlayer from 'react-player';
 
 class Thoughts extends React.Component {
     constructor(props) {
@@ -19,7 +20,6 @@ class Thoughts extends React.Component {
         this.thoughtsRef = db.collection('thoughts')
     }
     componentDidMount() {
-        console.log(this.state)
         if (this.state.initialLoad) {
             this.thoughtsRef
                 .orderBy('date_created', 'desc')
@@ -66,13 +66,35 @@ class Thoughts extends React.Component {
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {
-                                            return (<div key={thought.value} style={{ marginBottom: '5%' }}><img style={{ height: 'auto', width: 'auto' }} src={thought.value} /></div>)
+                                            return (
+                                                <div key={thought.value} style={{ marginBottom: '5%' }}>
+                                                    <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
+                                                        <img style={{ height: 'auto', width: 'auto' }} src={thought.value} />
+                                                    </a>
+                                                </div>
+                                            )
                                         }
                                         if (thought.type === 'text') {
-                                            return (<div key={thought.value} style={{ backgroundColor: 'white', textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> {thought.value} </div>)
+                                            return (
+                                                <div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}>
+                                                    <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
+                                                        {thought.value}
+                                                    </a>
+                                                </div>
+                                            )
                                         }
                                         if (thought.type === 'link') {
                                             return (<div key={thought.value} style={{ marginBottom: '5%' }}> <a href={thought.value} target='_blank'> {thought.value} </a> </div>)
+                                        }
+                                        if (thought.type === 'video') {
+                                            return (
+                                                <div key={thought.value} style={{ marginBottom: '5%' }}>
+                                                    <ReactPlayer 
+                                                        url={thought.value}
+                                                        controls
+                                                        width='100%'
+                                                    />
+                                                </div>)
                                         }
                                     })
                                 }
@@ -97,15 +119,25 @@ class Thoughts extends React.Component {
                                         }
                                         if (thought.type === 'text') {
                                             return (
-                                            <div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> 
-                                                <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
-                                                    {thought.value} 
-                                                </a> 
-                                            </div>
+                                                <div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}>
+                                                    <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
+                                                        {thought.value}
+                                                    </a>
+                                                </div>
                                             )
                                         }
                                         if (thought.type === 'link') {
                                             return (<div key={thought.value} style={{ marginBottom: '5%' }}> <a href={thought.value} target='_blank'> {thought.value} </a> </div>)
+                                        }
+                                        if (thought.type === 'video') {
+                                            return (
+                                                <div key={thought.value} style={{ marginBottom: '5%' }}>
+                                                    <ReactPlayer 
+                                                        url={thought.value}
+                                                        controls
+                                                        width='100%'
+                                                    />
+                                                </div>)
                                         }
                                     })
                                 }
