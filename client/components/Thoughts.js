@@ -90,7 +90,7 @@ class Thoughts extends React.Component {
                                             return (<div key={thought.value} style={{ marginBottom: '5%' }}><img style={{ height: 'auto', width: 'auto' }} src={thought.value} /></div>)
                                         }
                                         if (thought.type === 'text') {
-                                            return (<div key={thought.value} style={{ backgroundColor: 'white', textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> {thought.value} </div>)
+                                            return (<div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> {thought.value} </div>)
                                         }
                                         if (thought.type === 'link') {
                                             return (<div key={thought.value} style={{ marginBottom: '5%' }}> <a href={thought.value} target='_blank'> {thought.value} </a> </div>)

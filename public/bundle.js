@@ -1608,8 +1608,8 @@ var Nav = function (_React$Component) {
                             { style: { height: 'auto', overflow: 'auto', display: 'flex', alignItems: 'center', paddingTop: '5%' } },
                             _react2.default.createElement(
                                 _reactMaterialize.Col,
-                                { s: 4 },
-                                _react2.default.createElement('img', { style: { height: '20px' }, src: '/arrows.png', onClick: this.back })
+                                { s: 4, onClick: this.back },
+                                _react2.default.createElement('img', { style: { height: '20px' }, src: '/arrows.png' })
                             ),
                             _react2.default.createElement(
                                 _reactMaterialize.Col,
@@ -7160,14 +7160,14 @@ var Connect = function Connect() {
             { className: 'desktopContainer' },
             _react2.default.createElement(
                 _reactMaterialize.Col,
-                { m: 4, offset: 'm4', style: { paddingTop: '20%', fontSize: '35px' } },
+                { m: 4, offset: 'm4', style: { paddingTop: '21%' } },
                 _react2.default.createElement(
                     'a',
                     { href: 'mailto: playtodie2000@gmail.com' },
                     ' ',
                     _react2.default.createElement(
                         'p',
-                        null,
+                        { id: 'smaller' },
                         ' for all email inquiries '
                     ),
                     ' '
@@ -7178,7 +7178,7 @@ var Connect = function Connect() {
                     ' ',
                     _react2.default.createElement(
                         'p',
-                        null,
+                        { id: 'smaller' },
                         'instagram'
                     ),
                     '  '
@@ -7189,7 +7189,7 @@ var Connect = function Connect() {
                     '  ',
                     _react2.default.createElement(
                         'p',
-                        null,
+                        { id: 'smaller' },
                         ' subscribe to our mailing list '
                     ),
                     ' '
@@ -7234,7 +7234,7 @@ var Home = function Home() {
                 { s: 4 },
                 _react2.default.createElement(
                     _reactRouterDom.Link,
-                    { to: '/' },
+                    { style: { fontSize: '18px' }, to: '/' },
                     ' playtodie '
                 )
             ),
@@ -7356,7 +7356,7 @@ var Home = function Home() {
         ),
         _react2.default.createElement(
             _reactMaterialize.Row,
-            { style: { paddingTop: '7%' } },
+            { style: { paddingTop: '10%' } },
             _react2.default.createElement(
                 'div',
                 null,
@@ -7930,7 +7930,7 @@ var Thoughts = function (_React$Component) {
                             if (thought.type === 'text') {
                                 return _react2.default.createElement(
                                     'div',
-                                    { key: thought.value, style: { backgroundColor: 'white', textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' } },
+                                    { key: thought.value, style: { textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' } },
                                     ' ',
                                     thought.value,
                                     ' '

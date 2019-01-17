@@ -11,8 +11,8 @@ const Connect = () => (
                 <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '5%', paddingRight: '5%', fontSize: '25px' }}>
                     <div>
 
-                        <Col style={{ minWidth: '100%' }}>
-                            <a href='mailto: playtodie2000@gmail.com'> <p> for all email inquiries </p> </a>
+                        <Col style={{ minWidth: '100%', }}>
+                            <a href='mailto: playtodie2000@gmail.com' > <p> for all email inquiries </p> </a>
                         </Col>
                         <Col style={{ minWidth: '100%' }}>
                             <a href="https://www.instagram.com/playtodie_/" target='_bank'> <p>instagram</p>  </a>
@@ -29,10 +29,10 @@ const Connect = () => (
             !/Mobi/.test(navigator.userAgent) && (
                 <div className='desktopContainer'>
 
-                    <Col m={4} offset='m4' style={{ paddingTop: '20%', fontSize: '35px' }}>
-                        <a href='mailto: playtodie2000@gmail.com'> <p> for all email inquiries </p> </a>
-                        <a href="https://www.instagram.com/playtodie_/" target='_bank'> <p>instagram</p>  </a>
-                        <Link to='/subscribe'>  <p> subscribe to our mailing list </p> </Link>
+                    <Col m={4} offset='m4' style={{ paddingTop: '21%',}}>
+                        <a href='mailto: playtodie2000@gmail.com'> <p id="smaller"> for all email inquiries </p> </a>
+                        <a href="https://www.instagram.com/playtodie_/" target='_bank'> <p id="smaller">instagram</p>  </a>
+                        <Link to='/subscribe'>  <p id="smaller"> subscribe to our mailing list </p> </Link>
                     </Col>
                 </div>
             )
