@@ -7919,16 +7919,22 @@ var Thoughts = function (_React$Component) {
                                 return _react2.default.createElement(
                                     'div',
                                     { key: thought.value, style: { marginBottom: '5%' } },
-                                    _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: thought.value })
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: thought.link || "Javascript:void(0)", id: 'noHover', target: '_blank' },
+                                        _react2.default.createElement('img', { style: { height: 'auto', width: 'auto' }, src: thought.value })
+                                    )
                                 );
                             }
                             if (thought.type === 'text') {
                                 return _react2.default.createElement(
                                     'div',
                                     { key: thought.value, style: { textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' } },
-                                    ' ',
-                                    thought.value,
-                                    ' '
+                                    _react2.default.createElement(
+                                        'a',
+                                        { href: thought.link || "Javascript:void(0)", id: 'noHover', target: '_blank' },
+                                        thought.value
+                                    )
                                 );
                             }
                             if (thought.type === 'link') {

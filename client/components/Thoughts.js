@@ -50,7 +50,7 @@ class Thoughts extends React.Component {
                 snapshot.forEach(doc => data.push(doc.data()))
                 const thoughts = [...this.state.thoughts, ...data]
                 const lastLoad = snapshot.docs[snapshot.docs.length - 1]
-                if (prevLength === thoughts.length) this.setState({loadMore: false})
+                if (prevLength === thoughts.length) this.setState({ loadMore: false })
                 else this.setState({ thoughts, lastLoad })
             })
     }
@@ -83,14 +83,26 @@ class Thoughts extends React.Component {
                 {
                     !/Mobi/.test(navigator.userAgent) && (
                         <div className="desktopContainer">
-                            <Col style={{ fontSize: '25px', paddingTop: '20%', paddingLeft: '30%', paddingRight: '30%', paddingBottom:'5%' }}>
+                            <Col style={{ fontSize: '25px', paddingTop: '20%', paddingLeft: '30%', paddingRight: '30%', paddingBottom: '5%' }}>
                                 {
                                     this.state.thoughts.map(thought => {
                                         if (thought.type === 'image') {
-                                            return (<div key={thought.value} style={{ marginBottom: '5%' }}><img style={{ height: 'auto', width: 'auto' }} src={thought.value} /></div>)
+                                            return (
+                                                <div key={thought.value} style={{ marginBottom: '5%' }}>
+                                                    <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
+                                                        <img style={{ height: 'auto', width: 'auto' }} src={thought.value} />
+                                                    </a>
+                                                </div>
+                                            )
                                         }
                                         if (thought.type === 'text') {
-                                            return (<div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> {thought.value} </div>)
+                                            return (
+                                            <div key={thought.value} style={{ textAlign: 'left', marginBottom: '5%', paddingLeft: '1%', paddingRight: '1%', paddingTop: '1%', paddingBottom: '1%' }}> 
+                                                <a href={thought.link || "Javascript:void(0)"} id="noHover" target="_blank">
+                                                    {thought.value} 
+                                                </a> 
+                                            </div>
+                                            )
                                         }
                                         if (thought.type === 'link') {
                                             return (<div key={thought.value} style={{ marginBottom: '5%' }}> <a href={thought.value} target='_blank'> {thought.value} </a> </div>)
