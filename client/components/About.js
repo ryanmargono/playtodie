@@ -11,7 +11,7 @@ const About = () => (
                 <div style={{ display: 'flex', alignItems: 'center', paddingLeft: '5%', paddingRight: '5%' }}>
                     <div>
                         <Col className='text' style={{ fontSize: '25px', minWidth: '100%' }}>
-                            playtodie uses open source information to discover a deeper meaning of the world and the self.
+                            playtodie uses open source information to uncover a deeper understanding of the world and the self.
                         <br /> <br />
                             conceptualized by jason seidman
                     </Col>
@@ -28,7 +28,7 @@ const About = () => (
                 <div className="desktopContainer">
                     <Row style={{ marginTop: '20%' }}>
                         <Col s={12} m={4} offset='m4' className='text'>
-                            playtodie uses open source information to discover a deeper meaning of the world and the self.
+                            playtodie uses open source information to uncover a deeper understanding of the world and the self.
                             <br /> <br />
                             conceptualized by jason seidman
                         </Col>

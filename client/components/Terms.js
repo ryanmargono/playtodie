@@ -12,7 +12,7 @@ const Terms = () => (
                 <br /> <br />
                     return policy
                 <br /> <br />
-                    all sales are final, return are not accepted. in case of damage or missing products, we offer full refunds or exchanges of items for equal value. we reserve the right to refuse return requests at any time.
+                    all sales are final, returns are not accepted. in case of damaged or missing products, we offer full refunds or exchanges for items of equal value. we reserve the right to refuse return requests at any time.
                 <br /> <br />
                     payment
                 <br /> <br />
@@ -33,7 +33,7 @@ const Terms = () => (
                 <br /> <br />
                             return policy
                 <br /> <br />
-                            all sales are final, return are not accepted. in case of damage or missing products, we offer full refunds or exchanges of items for equal value. we reserve the right to refuse return requests at any time.
+                            all sales are final, returns are not accepted. in case of damaged or missing products, we offer full refunds or exchanges for items of equal value. we reserve the right to refuse return requests at any time.
                 <br /> <br />
                             payment
                 <br /> <br />
