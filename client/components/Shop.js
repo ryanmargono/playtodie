@@ -30,11 +30,6 @@ class Thoughts extends React.Component {
                     this.setState({ products: data, lastLoad: snapshot.docs[snapshot.docs.length - 1], initialLoad: false }, () => console.log(this.state))
                 })
         }
-        this.productsRef.add({
-            date_created: new Date().toString(),
-            image: "https://firebasestorage.googleapis.com/v0/b/playtodie-86708.appspot.com/o/63%25%2Bproduct%2Bphoto1.png?alt=media&token=321ddf96-b752-4b3c-93f4-d79d9c3f7392",
-            link: "https://www.playtodie.com/product/63"
-        })
     }
 
     handleScroll = (e) => {
