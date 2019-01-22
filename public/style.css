@@ -67,7 +67,7 @@ div {
     background-size: auto 100vh;
 }
 
-.noStyleButton {
+#noStyleButton {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
